@@ -1,0 +1,4 @@
+numpy>=1.24
+scipy>=1.10
+# optional, for frame-exact word timings (npm run sync):
+# faster-whisper>=1.0

@@ -1,0 +1,38 @@
+{
+  "name": "grocery-short",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Half-Empty Cart: a 12 s vertical cartoon short (2D characters in a 3D toon world, three.js inside Remotion)",
+  "scripts": {
+    "preview": "remotion studio src/index.ts",
+    "sync": "node scripts/py.mjs scripts/sync_all.py",
+    "sync:words": "node scripts/py.mjs scripts/align_words.py",
+    "audio": "node scripts/py.mjs audio/mix.py",
+    "stills": "node scripts/stills.mjs",
+    "framing": "tsx scripts/framing.ts",
+    "render": "remotion render src/index.ts GroceryShort out/video_silent.mp4 --codec h264 --crf 16 --scale 1.3333 --muted --gl=angle",
+    "mux": "node scripts/mux.mjs",
+    "check": "node scripts/check.mjs",
+    "make": "npm run sync && npm run render && npm run mux && npm run check",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.1.2",
+    "@react-three/postprocessing": "3.0.4",
+    "@remotion/bundler": "4.0.290",
+    "@remotion/cli": "4.0.290",
+    "@remotion/renderer": "4.0.290",
+    "@remotion/three": "4.0.290",
+    "postprocessing": "6.37.2",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.290",
+    "three": "0.175.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.2",
+    "@types/three": "0.175.0",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
+  }
+}
